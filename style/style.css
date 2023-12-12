@@ -1,0 +1,284 @@
+:root {
+  --fs-title: 2.5rem;
+  --fs-subtitle: 1.5rem;
+  --fs-label: 1.25rem;
+  --fs-input: 1.45rem;
+  --fs-paying: 4rem;
+  --fs-item: 1.625rem;
+
+  --clr-input: #A175FF;
+  --clr-input-bg: #EEEEEE;
+  --clr-placeholder: #CFBBF9;
+  --clr-summary: #F0F0F0;
+  --clr-text: #575757;
+  --clr-button: #9563FF;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  padding: 3rem 2rem;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+  background-color: #FFFFFF;
+  word-wrap: break-word;
+}
+
+@media only screen and (width < 801px) {
+  body {
+    flex-direction: column-reverse;
+  }
+}
+
+/* --- Flex Containers --- */
+
+/* -- column containers -- */
+#form-container,
+#my-form,
+#payment-display,
+.total {
+  display: flex;
+  flex-direction: column;
+}
+
+/* -- row containers -- */
+.ccd-exp-cvc,
+.item-line,
+.discount-container,
+.item-line {
+  display: flex;
+}
+
+.item-line {
+  justify-content: space-between;
+  align-content: center;
+}
+
+#discount-code {
+  flex-grow: 1;
+}
+
+#pay-btn {
+  align-self: flex-start;
+}
+
+.ccd-exp-cvc {
+  justify-content: space-between;
+}
+
+@media only screen and (width < 600px) {
+  .ccd-exp-cvc {
+    flex-direction: column;
+  }
+}
+
+/* --- Sizes, Spacing and Font--- */
+/* -- Form -- */
+
+#my-form {
+  width: 80%;
+}
+
+@media only screen and (width < 801px) {
+  #my-form {
+    margin-inline: auto;
+  }
+
+  .title-container {
+    text-align: center;
+  }
+
+  #pay-btn {
+    align-self: unset;
+  }
+}
+
+#ccd-exp,
+#ccd-cvc,
+input {
+  width: 100%;
+}
+
+.ccd-exp-cvc {
+  gap: 1rem;
+}
+
+.item-line {
+  gap: 3rem;
+}
+
+.title-container {
+  margin-block-end: 8rem;
+}
+
+.title {
+  margin-block-end: 2.4rem;
+}
+
+label,
+.ccd-exp-cvc {
+  margin-block: .4em;
+}
+
+#pay-btn {
+  margin-block-start: 1.5em;
+}
+
+input {
+  padding-block: 1.25rem;
+  padding-inline-start: 1.3rem;
+  font-size: var(--fs-input);
+}
+
+/* -- Summary -- */
+#payment-display {
+  padding-block: 4.4rem;
+  padding-inline-start: 2.5rem;
+  padding-inline-end: 1.6rem;
+}
+
+.paying-msg {
+  font-size: var(--fs-subtitle);
+  font-weight: 500;
+  color: var(--clr-text);
+  margin-block-end: .5em;
+}
+
+.total-big {
+  font-size: var(--fs-paying);
+  font-weight: 700;
+  padding-inline-start: 1rem;
+}
+
+.total {
+  margin-block-end: 4rem;
+}
+
+.item-line {
+  margin-block-end: 2rem;
+}
+
+.item-name {
+  font-size: var(--fs-item);
+  font-weight: 700;
+}
+
+.item-description {
+  font-size: var(--fs-label);
+  font-weight: 500;
+  color: var(--clr-text);
+  padding-inline-start: .5em;
+}
+
+.item-price {
+  font-size: var(--fs-label);
+  font-weight: 500;
+  color: #000;
+  padding-block-start: .2em;
+}
+
+.final-total {
+  margin-block-start: 2.5rem;
+}
+
+hr {
+  margin-block-start: 3rem;
+}
+
+/* ---------------------------------- */
+#payment-display {
+  background-color: var(--clr-summary);
+  border-radius: 10px;
+  background-image: radial-gradient(circle, rgba(148, 99, 255, 0.741) 2%, rgba(208, 191, 245, 1) 15%, rgba(240, 240, 240, 1) 30%);
+  background-position: -25px -240px;
+}
+
+#discount-code,
+#discount-btn,
+input {
+  border: none;
+}
+
+.discount-container,
+input {
+  border-bottom: 1px solid var(--clr-button);
+  background-color: var(--clr-input-bg);
+  color: var(--clr-input);
+  border-radius: 10px;
+}
+
+::placeholder {
+  color: var(--clr-placeholder);
+}
+
+label {
+  color: var(--clr-text);
+  font-weight: 400;
+}
+
+.success {
+  border-bottom: 1px solid green;
+}
+
+.failure {
+  border-bottom: 1px solid red;
+}
+
+.title {
+  font-weight: 700;
+  font-size: var(--fs-title);
+}
+
+.subtitle {
+  font-weight: 400;
+  font-size: var(--fs-subtitle);
+}
+
+#discount-btn {
+  color: var(--clr-button);
+  font-size: var(--fs-label);
+  padding-inline-end: 1.38rem;
+  background: none;
+}
+
+
+#pay-btn {
+  border: none;
+  background-color: var(--clr-button);
+  color: #FFFFFF;
+  font-size: var(--fs-subtitle);
+  padding: 1.2rem 6.2rem;
+  border-radius: 10px;
+}
+
+#pay-btn[disabled] {
+  background-color: gray;
+  cursor: default;
+}
+
+#ccd-number {
+  background-image: url(../assets/generic.svg);
+  background-repeat: no-repeat;
+  background-size: 70px;
+  background-position: 10px;
+  padding-inline-start: 5.5rem;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+input {
+  outline: none;
+}

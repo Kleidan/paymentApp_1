@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="a payment appp with validations using js">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+  <!-- My Script -->
+  <script src="./js/script.js" defer async></script>
+
+  <!-- My Style -->
+  <link rel="stylesheet" href="./style/style.css">
+
+  <title>Payment App</title>
+</head>
+
+<body>
+
+  <!-- Form Container -->
+  <main id="form-container">
+
+    <!-- Title -->
+    <div class="title-container">
+      <div class="title">
+        <h1>Let's Make A Payment</h1>
+      </div>
+      <div class="subtitle">
+        <p>To start your payment, input your card details to make payment. <br>
+          You will be redirected to your banks authorization page.</p>
+      </div>
+    </div>
+
+    <!-- Form Starts Here -->
+    <form id="my-form">
+
+      <!-- Credit Card Holder Name -->
+      <label for="ccd-name">Cardholder's Name</label>
+      <input type="text" name="ccd-name" id="ccd-name" placeholder="John Doe">
+
+      <!-- Credit Card Number -->
+      <label for="ccd-number">Card Number</label>
+      <input type="text" name="ccd-number" id="ccd-number" placeholder="0000 0000 0000 0000" maxlength="19">
+
+      <!-- Credit Card Expiration and CVC -->
+      <div class="ccd-exp-cvc">
+        <div class="ccd-ex">
+          <label for="ccd-exp">Expiry Date</label><br>
+          <input type="text" name="ccd-exp" id="ccd-exp" placeholder="MM/YY" maxlength="5">
+        </div>
+
+        <div class="ccd-cvc">
+          <label for="ccd-cvc">CVC</label>
+          <br>
+          <input type="text" name="ccd-cvc" id="ccd-cvc" placeholder="CVC" maxlength="4">
+        </div>
+      </div>
+
+      <!-- Doscount Code -->
+      <label for="discount-code">Discount Code</label>
+      <div class="discount-container">
+        <input type="text" name="discount-code" id="discount-code" placeholder="CHIKAMSO-20-OFF">
+        <button id="discount-btn">Apply</button>
+      </div>
+
+      <!-- Pay Button -->
+      <button type="submit" id="pay-btn" disabled>Pay</button>
+    </form>
+  </main>
+
+  <!-- Total and Items Container -->
+  <aside id="payment-display">
+    <div class="total">
+
+      <span class="paying-msg">You're paying,</span>
+      <span class="total-big">$450.00</span>
+
+    </div>
+
+    <div class="items-display">
+      <div class="item-line">
+
+        <div class="item">
+          <p class="item-name">Custom Gucci Shoes</p>
+          <span class="item-description">Size: m Color: Red</span>
+        </div>
+        <span class="item-price">$400.00</span>
+      </div>
+
+      <div class="item-line">
+
+        <div class="item">
+          <p class="item-name">Nivea Cream 400ml</p>
+          <span class="item-description">Size: m Color: Blue</span>
+        </div>
+
+        <span class="item-price">$50.00</span>
+
+      </div>
+
+      <div class="item-line">
+
+        <div class="item">
+          <p class="item-name">Discounts & Offers</p>
+        </div>
+        <span class="item-price">$0.00</span>
+
+      </div>
+
+    </div>
+
+    <hr>
+
+    <div class="final-total">
+      <div class="item-line">
+
+        <div class="item">
+          <p class="item-name">Tax</p>
+        </div>
+        <span class="item-price">$0.00</span>
+
+      </div>
+      <div class="item-line">
+
+        <div class="item">
+          <p class="item-name">Total</p>
+        </div>
+        <span class="item-price">$450.00</span>
+
+      </div>
+    </div>
+  </aside>
+
+</body>
+
+</html>
